@@ -1,0 +1,91 @@
+@CHARSET "ISO-8859-1";
+.result-separator {
+   padding: 10px;
+   margin: 25px;
+   background: #fff;
+   color: #000;
+   font-size: 20px;
+   line-height: 1.0em;
+   border: 0px solid #000;
+   border-radius: 15px;
+   box-shadow: 0 0 0 0px #ff0030, 2px 1px 6px 4px rgba(53, 87, 0, 0.7);
+   font-weight: normal;
+}
+.date {
+	font-size: 17px;
+}
+.body-text {
+  padding: 25px;
+  margin: 10px;
+  font-size: 20px;
+}
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+#footer {
+ clear: both;
+ font-size: 15px;
+ position: relative;
+ z-index: 10;
+ height: 3em;
+ margin-top: -3em;
+}
+
+#content { padding-bottom: 3em; }
+
+#frame {
+    width: 480px;
+    height: 180px;
+    border: none;
+    -moz-transform: scale(0.3);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.3);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.3);
+    -webkit-transform-origin: 0 0;
+}
+
+/* unvisited link */
+a:link {
+    color: #355700;
+}
+
+/* visited link */
+a:visited {
+    color: #355700;
+}
+
+/* mouse over link */
+a:hover {
+    color: #355700;
+}
+
+/* selected link */
+a:active {
+    color: #355700;
+}
+
+input#search    {
+background:url(../img/compass.png);
+background-repeat: no-repeat;
+width:32px;
+height:32px;
+margin: 6px;
+padding: 10px;
+border:0
+}
+
+input#search:hover    {
+opacity: 0.8;
+}
+
+.buttonHolder{ 
+text-align: center;
+font-size: 20px;
+}
+
+input[type=text]
+{
+    font-size: 16px; 
+}
