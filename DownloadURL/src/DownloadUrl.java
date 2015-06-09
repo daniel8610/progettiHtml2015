@@ -5,7 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-//diventerà un task
+//codice seriale che scarica da un link url un file o la pagina html
 public class DownloadUrl {
 
 	public static void downloadFromUrl(URL url, String localFilename) throws IOException {
