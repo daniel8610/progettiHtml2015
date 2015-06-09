@@ -11,10 +11,7 @@ import org.jsoup.select.Elements;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
 import de.l3s.boilerpipe.extractors.ArticleExtractor;
 
-/**
- * Hello world!
- *
- */
+//recupera da una pagina html tutti i link che ci sono in esso
 public class App 
 {
     public static void main( String[] args ) throws IOException, BoilerpipeProcessingException
