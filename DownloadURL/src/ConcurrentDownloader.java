@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 
 public class ConcurrentDownloader {
@@ -25,6 +26,12 @@ public class ConcurrentDownloader {
 			URL url=new URL(urlbase.toString());
 			pool.submit(new TaskDownloaderUrl(url,sb.toString()));
 		 }
+		pool.shutdown();
+    	try {
+			pool.awaitTermination(600000, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		System.out.println("fine");
 	}
 }
