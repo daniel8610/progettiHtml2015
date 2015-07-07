@@ -11,9 +11,11 @@ public class TaskDownloaderUrl implements Callable<Integer>{
 
 	private URL url;
 	private String nomefile;
-	public TaskDownloaderUrl(URL url,String nomefile){
+	private String path;
+	public TaskDownloaderUrl(URL url,String nomefile,String p){
 		this.url=url;
 		this.nomefile=nomefile;
+		this.path=p;
 	}
 	public Integer call() throws Exception {
 		    InputStream is = null;
@@ -24,7 +26,7 @@ public class TaskDownloaderUrl implements Callable<Integer>{
 		        urlConn.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0");
 
 		        is = urlConn.getInputStream();               //get connection inputstream
-		        fos = new FileOutputStream(this.nomefile);   //open outputstream to local file
+		        fos = new FileOutputStream(this.path+"/"+this.nomefile);   //open outputstream to local file
 
 		        byte[] buffer = new byte[4096];              //declare 4KB buffer
 		        int len;

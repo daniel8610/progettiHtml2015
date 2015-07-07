@@ -12,19 +12,24 @@ public class ConcurrentDownloader {
 	private final static int NCPU =Runtime.getRuntime().availableProcessors();
 	private int partenza;
 	private StringBuilder urlbase;
-	public ConcurrentDownloader(int partenza,String urlbase){
+	private int fine;
+	private String output;
+	public ConcurrentDownloader(int partenza,String urlbase,int fine,String output){
 		this.partenza=partenza;
 		this.urlbase=new StringBuilder(urlbase);
+		this.fine=fine;
+		this.output=output;
 	}
 	public  void multiDownload() throws MalformedURLException{
 		ExecutorService pool=Executors.newFixedThreadPool(NCPU);
-		for(int i=0;i<7;i++){
+		for(int i=0;i<this.fine;i++){
 			StringBuilder sb = new StringBuilder("CSdemo.rar");
 			sb.insert(6,i);
 			this.partenza=this.partenza+1;
 			urlbase.replace(51,urlbase.length() ,new Integer(this.partenza).toString());
 			URL url=new URL(urlbase.toString());
-			pool.submit(new TaskDownloaderUrl(url,sb.toString()));
+			//pool.submit(new TaskDownloaderUrl(url,"filescaricati/"+sb.toString()));
+			pool.submit(new TaskDownloaderUrl(url,sb.toString(),this.output));
 		 }
 		pool.shutdown();
     	try {
