@@ -12,11 +12,11 @@ import de.l3s.boilerpipe.BoilerpipeProcessingException;
 import de.l3s.boilerpipe.extractors.ArticleExtractor;
 
 //recupera da una pagina html tutti i link che ci sono in esso
-public class App 
+public class CatchURL 
 {
     public static void main( String[] args ) throws IOException, BoilerpipeProcessingException
     {
-    	Document doc = Jsoup.connect("http://www.10news.com/news").get();
+    	Document doc = Jsoup.connect("http://romanews.eu/2016/roma-inter-sfida-spigolosa-a-colpi-di-angoli/").get();
 
     	 //System.out.println(doc.html());
     	//System.out.println(doc.getElementsByClass("left").text());
